@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lai Bakery - Panadería Artesanal</title>
+    <!-- Carga de Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de fuente Inter y colores de tema -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f3ed; /* Fondo muy suave, casi crema */
+        }
+        /* Colores personalizados para el tema de panadería */
+        .color-primary { color: #8c4b2b; } /* Marrón Oscuro de Café/Cacao */
+        .bg-primary { background-color: #8c4b2b; }
+        .color-accent { color: #facc15; } /* Dorado Suave */
+        .bg-accent { background-color: #facc15; }
+        .bg-light-cream { background-color: #fffaf0; } /* Blanco Roto */
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navbar Responsive -->
+    <header class="sticky top-0 z-50 bg-light-cream shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Marca -->
+            <a href="#inicio" class="text-3xl font-bold color-primary tracking-widest">
+                Lai<span class="text-yellow-600">Bakery</span>
+            </a>
+
+            <!-- Menú Desktop -->
+            <div class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#inicio" class="hover:text-yellow-600 transition duration-300">Inicio</a>
+                <a href="#menu" class="hover:text-yellow-600 transition duration-300">Menú</a>
+                <a href="#nosotros" class="hover:text-yellow-600 transition duration-300">Nosotros</a>
+                <a href="#contacto" class="hover:text-yellow-600 transition duration-300">Contacto</a>
+            </div>
+
+            <!-- Botón del menú móvil -->
+            <button id="menu-button" class="md:hidden p-2 rounded-lg color-primary hover:bg-amber-100 transition duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Menú Móvil (oculto por defecto) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-light-cream border-t border-amber-200">
+            <a href="#inicio" class="block py-3 px-6 text-base hover:bg-amber-50 transition duration-300">Inicio</a>
+            <a href="#menu" class="block py-3 px-6 text-base hover:bg-amber-50 transition duration-300">Menú</a>
+            <a href="#nosotros" class="block py-3 px-6 text-base hover:bg-amber-50 transition duration-300">Nosotros</a>
+            <a href="#contacto" class="block py-3 px-6 text-base hover:bg-amber-50 transition duration-300">Contacto</a>
+        </div>
+    </header>
+
+    <!-- Hero Section (Inicio) -->
+    <section id="inicio" class="relative overflow-hidden pt-16 md:pt-24 pb-16 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x800/d4a572/ffffff?text=Pan+fresco+y+Pasteler%C3%ADa+Artesanal');">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white py-16 md:py-32 lg:py-48">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 drop-shadow-lg">
+                El Arte de Hornear, Hecho en Casa.
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto drop-shadow-md">
+                En Lai Bakery, cada bocado es una experiencia. Panes de masa madre, pasteles de ensueño y la mejor repostería fina.
+            </p>
+            <a href="#menu" class="inline-block bg-yellow-600 text-white font-semibold py-3 px-8 rounded-full shadow-xl hover:bg-yellow-700 transition duration-300 transform hover:scale-105">
+                Ver Nuestro Menú
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de Productos Destacados (Menú) -->
+    <section id="menu" class="py-16 md:py-24 bg-light-cream">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center color-primary mb-12">Nuestros Productos Estrella</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Producto 1: Pan de Masa Madre -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300 border border-amber-100">
+                    <img src="https://placehold.co/600x400/8c4b2b/ffffff?text=Pan+de+Masa+Madre" alt="Pan de Masa Madre" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold color-primary mb-2">Pan de Masa Madre Clásico</h3>
+                        <p class="text-gray-600 mb-4">Fermentado por 24 horas para una corteza crujiente y un interior suave y aireado.</p>
+                        <span class="text-xl font-bold text-yellow-600">$5.00</span>
+                    </div>
+                </div>
+
+                <!-- Producto 2: Tarta de Chocolate -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300 border border-amber-100">
+                    <img src="https://placehold.co/600x400/a86a4f/ffffff?text=Pastel+de+Chocolate" alt="Tarta de Chocolate" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold color-primary mb-2">Tarta Selva Negra Premium</h3>
+                        <p class="text-gray-600 mb-4">Capas de bizcocho de chocolate, crema fresca y cerezas. La favorita de la casa.</p>
+                        <span class="text-xl font-bold text-yellow-600">$35.00</span>
+                    </div>
+                </div>
+
+                <!-- Producto 3: Croissant de Almendras -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300 border border-amber-100">
+                    <img src="https://placehold.co/600x400/d4a572/ffffff?text=Croissant+de+Almendras" alt="Croissant de Almendras" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold color-primary mb-2">Croissant de Almendras</h3>
+                        <p class="text-gray-600 mb-4">Hojaldre perfecto con relleno de crema de almendras y un glaseado crujiente.</p>
+                        <span class="text-xl font-bold text-yellow-600">$4.50</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contacto" class="inline-block bg-primary text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-amber-800 transition duration-300 transform hover:scale-105">
+                    Hacer un Pedido Personalizado
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros (About Us) -->
+    <section id="nosotros" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Texto -->
+                <div class="lg:order-1">
+                    <h2 class="text-4xl font-bold color-primary mb-6">Nuestra Historia: Pasión por la Panadería</h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Lai Bakery nació en 2018 del sueño de Lai Chen de llevar el verdadero sabor de la repostería artesanal a nuestra comunidad. Creemos que los mejores productos se hacen con los ingredientes más frescos, sin atajos y con mucho amor.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Desde nuestro primer pan de centeno hasta la tarta de bodas más elaborada, mantenemos nuestro compromiso con la calidad y la tradición. Ven a visitarnos y siente el calor de nuestro horno y la calidad de nuestros ingredientes.
+                    </p>
+                    <ul class="space-y-2 mt-6 text-gray-700 font-medium">
+                        <li class="flex items-center"><span class="text-yellow-600 mr-3 text-2xl">&bull;</span> Ingredientes locales y frescos</li>
+                        <li class="flex items-center"><span class="text-yellow-600 mr-3 text-2xl">&bull;</span> Masa madre con más de 5 años de vida</li>
+                        <li class="flex items-center"><span class="text-yellow-600 mr-3 text-2xl">&bull;</span> Recetas familiares transmitidas por generaciones</li>
+                    </ul>
+                </div>
+                <!-- Imagen -->
+                <div class="lg:order-2">
+                    <img src="https://placehold.co/600x450/8c4b2b/ffffff?text=Lai+Chen+Horneando" alt="Lai Chen Horneando" class="rounded-2xl shadow-2xl border-4 border-amber-50">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto y Ubicación -->
+    <section id="contacto" class="py-16 md:py-24 bg-primary text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Visítanos o Contáctanos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Formulario de Contacto -->
+                <div class="bg-amber-800 p-8 rounded-xl shadow-2xl">
+                    <h3 class="text-2xl font-semibold mb-6 text-yellow-200">Envíanos un Mensaje</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Nombre</label>
+                            <input type="text" id="name" class="w-full p-3 rounded-lg text-gray-900 focus:ring-yellow-600 focus:border-yellow-600 border-gray-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Correo Electrónico</label>
+                            <input type="email" id="email" class="w-full p-3 rounded-lg text-gray-900 focus:ring-yellow-600 focus:border-yellow-600 border-gray-300">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Mensaje/Pedido</label>
+                            <textarea id="message" rows="4" class="w-full p-3 rounded-lg text-gray-900 focus:ring-yellow-600 focus:border-yellow-600 border-gray-300"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-yellow-600 text-white font-semibold py-3 rounded-lg hover:bg-yellow-700 transition duration-300 transform hover:scale-[1.01]">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Información de Contacto y Horarios -->
+                <div class="space-y-6 flex flex-col justify-center">
+                    <div class="flex items-start space-x-4">
+                        <svg class="w-8 h-8 flex-shrink-0 text-yellow-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <div>
+                            <h4 class="text-xl font-semibold text-yellow-200">Dirección</h4>
+                            <p>Calle de los Hornos, Edificio Masa Madre #101, Ciudad Panadería, 12345</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <svg class="w-8 h-8 flex-shrink-0 text-yellow-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <div>
+                            <h4 class="text-xl font-semibold text-yellow-200">Teléfono</h4>
+                            <p>(+123) 456-7890</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <svg class="w-8 h-8 flex-shrink-0 text-yellow-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <div>
+                            <h4 class="text-xl font-semibold text-yellow-200">Horario</h4>
+                            <p>Lunes a Sábado: 7:00 am - 7:00 pm</p>
+                            <p>Domingo: Cerrado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-950 text-white py-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2025 Lai Bakery. Todos los derechos reservados. | Hecho con Pasión y Harina.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para el menú móvil -->
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Ocultar el menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
