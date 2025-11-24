@@ -3,205 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lai Bakery - Panadería Artesanal costarricense sin ingredientes artificiales</title>
+    <title>Lai Bakery - Panadería Artesanal Modern</title>
     <!-- Carga de Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configuración de fuente Inter y colores de tema -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7f3ed; /* Fondo muy suave, casi crema */
+            background-color: #ffffff; /* Fondo Blanco */
         }
-        /* Colores personalizados para el tema de panadería */
-        .color-primary { color: #8c4b2b; } /* Marrón Oscuro de Café/Cacao */
-        .bg-primary { background-color: #8c4b2b; }
-        .bg-light-cream { background-color: #fffaf0; } /* Blanco Roto */
+        
+        /* Colores personalizados actualizados */
+        .color-primary { color: #000000; } /* Negro */
+        .bg-primary { background-color: #000000; } /* Fondo Negro */
+        .bg-secondary { background-color: #111827; } /* Gris muy oscuro para tarjetas en fondo negro */
+        
+        /* Ajuste para el turquesa específico si queremos uno más vibrante */
+        .text-accent { color: #14b8a6; } /* Teal-500 de Tailwind */
+        .bg-accent { background-color: #14b8a6; }
+        
+        .hero-overlay { background-color: rgba(0, 0, 0, 0.6); } 
     </style>
 </head>
-<body class="text-gray-800">
+<body class="text-gray-900">
 
-    <!-- Navbar Responsive -->
-    <header class="sticky top-0 z-50 bg-light-cream shadow-lg">
+    <!-- Navbar Responsive: Blanco con texto negro -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <!-- Logo/Marca -->
-            <a href="#inicio" class="text-3xl font-bold color-primary tracking-widest">
+            <a href="#inicio" class="text-3xl font-extrabold text-black tracking-widest uppercase">
                 Lai<span class="text-teal-500">Bakery</span>
             </a>
 
             <!-- Menú Desktop -->
             <div class="hidden md:flex space-x-8 text-lg font-medium">
-                <a href="#inicio" class="hover:text-teal-500 transition duration-300">Inicio</a>
-                <a href="#menu" class="hover:text-teal-500 transition duration-300">Menú</a>
-                <a href="#nosotros" class="hover:text-teal-500 transition duration-300">Nosotros</a>
-                <a href="#contacto" class="hover:text-teal-500 transition duration-300">Contacto</a>
+                <a href="#inicio" class="text-gray-800 hover:text-teal-500 transition duration-300">Inicio</a>
+                <a href="#menu" class="text-gray-800 hover:text-teal-500 transition duration-300">Menú</a>
+                <a href="#nosotros" class="text-gray-800 hover:text-teal-500 transition duration-300">Nosotros</a>
+                <a href="#contacto" class="text-gray-800 hover:text-teal-500 transition duration-300">Contacto</a>
             </div>
 
             <!-- Botón del menú móvil -->
-            <button id="menu-button" class="md:hidden p-2 rounded-lg color-primary hover:bg-amber-100 transition duration-300">
+            <button id="menu-button" class="md:hidden p-2 rounded-lg text-black hover:bg-gray-100 transition duration-300" aria-label="Abrir menú">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
 
-        <!-- Menú Móvil (oculto por defecto) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-light-cream border-t border-teal-200">
-            <a href="#inicio" class="block py-3 px-6 text-base hover:bg-teal-50 transition duration-300">Inicio</a>
-            <a href="#menu" class="block py-3 px-6 text-base hover:bg-teal-50 transition duration-300">Menú</a>
-            <a href="#nosotros" class="block py-3 px-6 text-base hover:bg-teal-50 transition duration-300">Nosotros</a>
-            <a href="#contacto" class="block py-3 px-6 text-base hover:bg-teal-50 transition duration-300">Contacto</a>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <a href="#inicio" class="block py-3 px-6 text-base text-black hover:bg-teal-50 transition duration-300">Inicio</a>
+            <a href="#menu" class="block py-3 px-6 text-base text-black hover:bg-teal-50 transition duration-300">Menú</a>
+            <a href="#nosotros" class="block py-3 px-6 text-base text-black hover:bg-teal-50 transition duration-300">Nosotros</a>
+            <a href="#contacto" class="block py-3 px-6 text-base text-black hover:bg-teal-50 transition duration-300">Contacto</a>
         </div>
     </header>
 
-    <!-- Hero Section (Inicio) -->
+    <!-- Hero Section -->
     <section id="inicio" class="relative overflow-hidden pt-16 md:pt-24 pb-16 bg-cover bg-center" style="background-image: url('https://i.imgur.com/example-bakery-kitchen-no-people.jpg');">
-        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="absolute inset-0 hero-overlay"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white py-16 md:py-32 lg:py-48">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 drop-shadow-lg">
-                El Arte de Hornear, Hecho en Casa.
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 drop-shadow-xl text-white">
+                El Arte de Hornear. <br><span class="text-teal-400">Hecho en Casa.</span>
             </h1>
-            <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto drop-shadow-md">
-                En Lai Bakery, cada bocado es una experiencia. Queques de banano con arandanos, palitos de queso y la mejor repostería fina.
+            <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto drop-shadow-md text-gray-100">
+                En Lai Bakery, cada bocado es una experiencia. Queques de banano con arándanos, palitos de queso y la mejor repostería fina.
             </p>
-            <a href="#menu" class="inline-block bg-teal-500 text-white font-semibold py-3 px-8 rounded-full shadow-xl hover:bg-teal-600 transition duration-300 transform hover:scale-105">
+            <a href="#menu" class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-none shadow-xl hover:bg-teal-400 transition duration-300 transform hover:scale-105 tracking-wider uppercase border-2 border-teal-500 hover:border-teal-400">
                 Ver Nuestro Menú
             </a>
         </div>
     </section>
 
-    <!-- Sección de Productos Destacados (Menú) -->
-    <section id="menu" class="py-16 md:py-24 bg-light-cream">
+    <!-- Sección de Productos Destacados (Fondo Blanco limpio) -->
+    <section id="menu" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center color-primary mb-12">Nuestros Productos Estrella</h2>
+            <h2 class="text-4xl font-extrabold text-center text-black mb-12 uppercase tracking-wide">Nuestros Productos <span class="text-teal-500">Estrella</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Producto 1: Paltos de queso -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300 border border-amber-100">
-                    <img src="https://placehold.co/600x400/8c4b2b/ffffff?text=Pan+de+Masa+Madre" alt="Pan de Masa Madre" class="w-full h-48 object-cover">
+                <!-- Producto 1 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-300 border border-gray-200 hover:border-teal-500 group">
+                    <img src="https://placehold.co/600x400/1a1a1a/ffffff?text=Palitos+de+Queso" alt="Palitos de queso" class="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition duration-500">
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold color-primary mb-2">Palitso de queso </h3>
-                        <p class="text-gray-600 mb-4">Elaborado con 3 horas. Corteza dorada, esponjosos con un ligero y adictivo sabor ácido.</p>
-                        <span class="text-xl font-bold text-teal-500">colones 2000</span>
+                        <h3 class="text-2xl font-bold text-black mb-2">Palitos de Queso</h3>
+                        <p class="text-gray-600 mb-4 font-light">Elaborado con 3 horas de reposo. Corteza dorada, esponjosos con un ligero y adictivo sabor.</p>
+                        <span class="text-xl font-bold text-teal-600">CRC 2,000</span>
                     </div>
                 </div>
 
-                <!-- Producto 2: Torta de chocolate Selva Negra la Mejor -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300 border border-amber-100">
-                    <img src="https://placehold.co/600x400/a86a4f/ffffff?text=Pastel+de+Chocolate" alt="Tarta de Chocolate" class="w-full h-48 object-cover">
+                <!-- Producto 2 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-300 border border-gray-200 hover:border-teal-500 group">
+                    <img src="https://placehold.co/600x400/1a1a1a/ffffff?text=Selva+Negra" alt="Tarta de Chocolate" class="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition duration-500">
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold color-primary mb-2">Tarta de Chocolate y Frambuesa</h3>
-                        <p class="text-gray-600 mb-4">Mousse de chocolate negro intenso sobre una base de galleta de mantequilla, coronada con frambuesas frescas y brillo.</p>
-                        <span class="text-xl font-bold text-teal-500"> colones 30000 </span>
+                        <h3 class="text-2xl font-bold text-black mb-2">Torta Selva Negra</h3>
+                        <p class="text-gray-600 mb-4 font-light">Mousse de chocolate negro intenso, base de galleta de mantequilla, coronada con frambuesas.</p>
+                        <span class="text-xl font-bold text-teal-600">CRC 30,000</span>
                     </div>
                 </div>
 
-                <!-- Producto 3: Pan Croissant -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition duration-300 border border-amber-100">
-                    <img src="https://placehold.co/600x400/d4a572/ffffff?text=Croissant+de+Almendras" alt="Croissant de Almendras" class="w-full h-48 object-cover">
+                <!-- Producto 3 -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-[1.02] transition duration-300 border border-gray-200 hover:border-teal-500 group">
+                    <img src="https://placehold.co/600x400/1a1a1a/ffffff?text=Croissant" alt="Croissant de Almendras" class="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition duration-500">
                     <div class="p-6">
-                        <h3 class="text-2xl font-semibold color-primary mb-2">Croissant Francés de Mantequilla</h3>
-                        <p class="text-gray-600 mb-4">Laminado a mano con mantequilla 100% pura. 27 capas de hojaldre crujiente y aroma inigualable. Perfecto para el desayuno.</p>
-                        <span class="text-xl font-bold text-teal-500">colones 2500</span>
+                        <h3 class="text-2xl font-bold text-black mb-2">Croissant de Mantequilla</h3>
+                        <p class="text-gray-600 mb-4 font-light">Laminado a mano con mantequilla 100% pura. 27 capas de hojaldre crujiente.</p>
+                        <span class="text-xl font-bold text-teal-600">CRC 2,500</span>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-12">
-                <a href="#contacto" class="inline-block bg-primary text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-amber-800 transition duration-300 transform hover:scale-105">
-                    Hacer un Pedido Personalizado
+                <a href="#contacto" class="inline-block bg-black text-white font-bold py-3 px-10 rounded-none shadow-lg hover:bg-gray-800 transition duration-300 transform hover:scale-105 border-2 border-black">
+                    Hacer Pedido Personalizado
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Sección Sobre Nosotros (About Us) -->
-    <section id="nosotros" class="py-16 md:py-24 bg-white">
+    <!-- Sección Sobre Nosotros (Fondo Gris muy claro para contraste) -->
+    <section id="nosotros" class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Texto -->
                 <div class="lg:order-1">
-                    <h2 class="text-4xl font-bold color-primary mb-6">Nuestra Historia: Pasión por la Panadería</h2>
-                    <p class="text-lg text-gray-700 mb-4">
-                        Lai Bakery nació en 2025 del sueño de Lai Sanchez de llevar el verdadero sabor de la repostería artesanal a nuestra comunidad. Creemos que los mejores productos se hacen con los ingredientes más frescos, sin atajos y con mucho amor.
+                    <h2 class="text-4xl font-extrabold text-black mb-6 uppercase tracking-wide">Nuestra Historia</h2>
+                    <p class="text-lg text-gray-700 mb-4 font-light leading-relaxed">
+                        Lai Bakery nació en 2025 del sueño de <span class="font-semibold text-teal-600">Lai Sánchez</span> de llevar el verdadero sabor de la repostería artesanal a nuestra comunidad. Creemos que los mejores productos se hacen con los ingredientes más frescos, sin atajos.
                     </p>
-                    <p class="text-lg text-gray-700 mb-4">
-                        Desde nuestro primer pan de centeno hasta la tarta de bodas más elaborada, mantenemos nuestro compromiso con la calidad y la tradición. Ven a visitarnos y siente el calor de nuestro horno y la calidad de nuestros ingredientes.
+                    <p class="text-lg text-gray-700 mb-4 font-light leading-relaxed">
+                        Desde nuestro primer pan de centeno hasta la tarta de bodas más elaborada, mantenemos nuestro compromiso con la calidad y la tradición.
                     </p>
-                    <ul class="space-y-2 mt-6 text-gray-700 font-medium">
-                        <li class="flex items-center"><span class="text-teal-500 mr-3 text-2xl">&bull;</span> Ingredientes locales y frescos</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-3 text-2xl">&bull;</span> Masa madre con más de 5 años de vida</li>
-                        <li class="flex items-center"><span class="text-teal-500 mr-3 text-2xl">&bull;</span> Recetas familiares transmitidas por generaciones</li>
+                    <ul class="space-y-3 mt-6 text-gray-800 font-medium">
+                        <li class="flex items-center"><span class="text-teal-500 mr-3 text-xl"><i class="fas fa-check"></i> &bull;</span> Ingredientes locales y frescos</li>
+                        <li class="flex items-center"><span class="text-teal-500 mr-3 text-xl"><i class="fas fa-check"></i> &bull;</span> Masa madre natural</li>
+                        <li class="flex items-center"><span class="text-teal-500 mr-3 text-xl"><i class="fas fa-check"></i> &bull;</span> Recetas familiares</li>
                     </ul>
                 </div>
                 <!-- Imagen -->
                 <div class="lg:order-2">
-                    <img src="https://i.imgur.com/example-bakery-interior-no-people.jpg" alt="Interior de panadería artesanal" class="rounded-2xl shadow-2xl border-4 border-amber-50">
+                    <img src="https://i.imgur.com/example-bakery-interior-no-people.jpg" alt="Interior de panadería artesanal" class="rounded-none shadow-2xl border-0 grayscale hover:grayscale-0 transition duration-700">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Contacto -->
-    <section id="contacto" class="py-16 md:py-24 bg-primary text-white">
+    <!-- Sección de Contacto (Fondo NEGRO impactante) -->
+    <section id="contacto" class="py-16 md:py-24 bg-black text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-12">Visítanos o Contáctanos</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 uppercase tracking-wider text-white">Contáctanos</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 
-                <!-- Formulario de Contacto -->
-                <div class="bg-amber-800 p-8 rounded-xl shadow-2xl">
-                    <h3 class="text-2xl font-semibold mb-6 text-teal-200">Envíanos un Mensaje</h3>
+                <!-- Formulario de Contacto (Gris Oscuro) -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-2xl border border-gray-800">
+                    <h3 class="text-2xl font-semibold mb-6 text-teal-400">Envíanos un Mensaje</h3>
                     <form class="space-y-4">
                         <div>
-                            <label for="name" class="block text-sm font-medium mb-1">Nombre</label>
-                            <input type="text" id="name" class="w-full p-3 rounded-lg text-gray-900 focus:ring-teal-500 focus:border-teal-500 border-gray-300">
+                            <label for="name" class="block text-sm font-medium mb-1 text-gray-300">Nombre</label>
+                            <input type="text" id="name" class="w-full p-3 rounded-none bg-gray-800 text-white border border-gray-700 focus:ring-teal-500 focus:border-teal-500">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-medium mb-1">Correo Electrónico</label>
-                            <input type="email" id="email" class="w-full p-3 rounded-lg text-gray-900 focus:ring-teal-500 focus:border-teal-500 border-gray-300">
+                            <label for="email" class="block text-sm font-medium mb-1 text-gray-300">Correo Electrónico</label>
+                            <input type="email" id="email" class="w-full p-3 rounded-none bg-gray-800 text-white border border-gray-700 focus:ring-teal-500 focus:border-teal-500">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium mb-1">Mensaje/Pedido</label>
-                            <textarea id="message" rows="4" class="w-full p-3 rounded-lg text-gray-900 focus:ring-teal-500 focus:border-teal-500 border-gray-300"></textarea>
+                            <label for="message" class="block text-sm font-medium mb-1 text-gray-300">Mensaje/Pedido</label>
+                            <textarea id="message" rows="4" class="w-full p-3 rounded-none bg-gray-800 text-white border border-gray-700 focus:ring-teal-500 focus:border-teal-500"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-teal-500 text-white font-semibold py-3 rounded-lg hover:bg-teal-600 transition duration-300 transform hover:scale-[1.01]">
+                        <button type="submit" class="w-full bg-teal-500 text-white font-bold py-3 rounded-none hover:bg-teal-600 transition duration-300 uppercase tracking-widest">
                             Enviar Mensaje
                         </button>
                     </form>
                 </div>
                 
                 <!-- Detalles de Contacto -->
-                <div class="space-y-6 flex flex-col justify-center">
+                <div class="space-y-8 flex flex-col justify-center">
                     
                     <!-- Dirección -->
-                    <div class="flex items-start space-x-4">
-                        <svg class="w-8 h-8 flex-shrink-0 text-teal-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <div class="flex items-start space-x-4 group">
+                        <div class="p-3 bg-gray-900 rounded-full group-hover:bg-teal-500 transition duration-300">
+                            <svg class="w-6 h-6 text-teal-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
                         <div>
-                            <h4 class="text-xl font-semibold text-teal-200">Dirección</h4>
-                            <p>Avenida 33, calle 110, casa 14, Pavas San José </p>
+                            <h4 class="text-xl font-bold text-white uppercase">Ubicación</h4>
+                            <p class="text-gray-400 mt-1">Avenida 33, calle 110, casa 14<br>Pavas, San José</p>
                         </div>
                     </div>
 
-                    <!-- WhatsApp (Actualizado) -->
-                    <div class="flex items-start space-x-4">
-                        <!-- Ícono de Chat/Mensaje para WhatsApp -->
-                        <svg class="w-8 h-8 flex-shrink-0 text-teal-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 4v-4z"></path></svg>
+                    <!-- WhatsApp -->
+                    <div class="flex items-start space-x-4 group">
+                        <div class="p-3 bg-gray-900 rounded-full group-hover:bg-teal-500 transition duration-300">
+                            <svg class="w-6 h-6 text-teal-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 4v-4z"></path></svg>
+                        </div>
                         <div>
-                            <h4 class="text-xl font-semibold text-teal-200">Pedidos WhatsApp</h4>
-                            <p>Contacta a Lai Sánchez directamente para pedidos:</p>
-                            <a href="https://wa.me/50686908422?text=Hola%20Lai%20Sanchez,%20me%20interesan%20sus%20productos%20de%20panadería." target="_blank" class="text-teal-400 hover:text-teal-300 underline font-bold transition duration-300">
+                            <h4 class="text-xl font-bold text-white uppercase">Pedidos WhatsApp</h4>
+                            <p class="text-gray-400 mt-1">Contacta a Lai Sánchez:</p>
+                            <a href="https://wa.me/50686908422?text=Hola%20Lai%20Sanchez,%20me%20interesan%20sus%20productos%20de%20panadería." target="_blank" class="text-2xl font-bold text-teal-400 hover:text-white transition duration-300 mt-1 inline-block">
                                 +506 8690 8422
                             </a>
                         </div>
                     </div>
 
                     <!-- Horario -->
-                    <div class="flex items-start space-x-4">
-                        <svg class="w-8 h-8 flex-shrink-0 text-teal-400 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div class="flex items-start space-x-4 group">
+                        <div class="p-3 bg-gray-900 rounded-full group-hover:bg-teal-500 transition duration-300">
+                            <svg class="w-6 h-6 text-teal-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
                         <div>
-                            <h4 class="text-xl font-semibold text-teal-200">Horario</h4>
-                            <p>Lunes a Sábado: 7:00 am - 7:00 pm</p>
-                            <p>Domingo: Cerrado</p>
+                            <h4 class="text-xl font-bold text-white uppercase">Horario</h4>
+                            <p class="text-gray-400 mt-1">Lunes a Sábado: 7:00 am - 7:00 pm</p>
+                            <p class="text-teal-500 font-semibold">Domingo: Cerrado</p>
                         </div>
                     </div>
                 </div>
@@ -210,9 +222,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-amber-950 text-white py-6">
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-900">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-            <p>&copy; 2025 Lai Bakery. Todos los derechos reservados. | Hecho con Pasión y Harina.</p>
+            <p>&copy; 2025 <span class="text-white font-bold">Lai Bakery</span>. San José, Costa Rica.</p>
         </div>
     </footer>
 
@@ -223,7 +235,6 @@
             menu.classList.toggle('hidden');
         });
 
-        // Ocultar el menú móvil al hacer clic en un enlace
         document.querySelectorAll('#mobile-menu a').forEach(item => {
             item.addEventListener('click', () => {
                 document.getElementById('mobile-menu').classList.add('hidden');
